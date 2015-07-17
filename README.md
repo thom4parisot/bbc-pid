@@ -1,4 +1,4 @@
-# `bbc-pid`
+# bbc-pid [![Build Status](https://travis-ci.org/oncletom/bbc-pid.svg?branch=master)](https://travis-ci.org/oncletom/bbc-pid)
 
 > Simple JavaScript API to validate Programme Identifier (PID) syntax and to compute BBC URLs.
 
@@ -44,6 +44,7 @@ pid.isValid('p01l1z04');
 pid.isValid('thedoctor');
 // -> false
 ```
+
 
 
 
