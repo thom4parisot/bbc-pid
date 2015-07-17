@@ -10,10 +10,27 @@ BBC Programmes Identifiers 0.4 spec defines a PID as following:
 > 
 > For historical reasons there are some 15 character pids existing for World Service content.
 
+# Install
 
-## API
+```bash
+npm i --save bbc-pid
+```
 
-### `pid(pid)`
+# Use
+
+```js
+var pid = require('bbc-pid');
+var request = require('superagent');
+
+request.get(pid('b062mzcw').programme).end(function(err, res){
+  console.log(res.body.programme.short_synopsis);
+});
+```
+
+
+# API
+
+## `pid(pid)`
 
 Returns programmatic URLs for a given PID. Expect a `301` redirect from the `iplayer` URL and a `404` if the PID does not match any programme at all.
 
@@ -33,7 +50,7 @@ pid('thedoctor')
 ```
 
 
-### `pid.isValid(pid)`
+## `pid.isValid(pid)`
 
 The underlying method used in `pid()` to validate if a given string is PID compliant.
 
